@@ -1,56 +1,5 @@
-" https://github.com/sontek/dotfiles/
-" ==========================================================
-" Dependencies - Libraries/Applications outside of vim
-" ==========================================================
-" Pep8 - http://pypi.python.org/pypi/pep8
-" Pyflakes
-" Ack
-" nose, django-nose
-
-" ==========================================================
-" Plugins included
-" ==========================================================
-" Pathogen
-"     Better Management of VIM plugins
-"
-" GunDo
-"     Visual Undo in vim with diff's to check the differences
-"
-" Pytest
-"     Runs your Python tests in Vim.
-"
-" Commant-T
-"     Allows easy search and opening of files within a given path
-"
-" Snipmate
-"     Configurable snippets to avoid re-typing common comands
-"
-" PyFlakes
-"     Underlines and displays errors with Python on-the-fly
-"
-" Fugitive
-"    Interface with git from vim
-"
-" Git
-"    Syntax highlighting for git config files
-"
-" Pydoc
-"    Opens up pydoc within vim
-"
-" Surround
-"    Allows you to surround text with open/close tags
-"
-" Py.test
-"    Run py.test test's from within vim
-"
-" MakeGreen
-"    Generic test runner that works with nose
-"
-" ==========================================================
-" Shortcuts
-" ==========================================================
 set nocompatible              " Don't be compatible with vi
-let mapleader=","             " change the leader to be a comma vs slash
+let mapleader="\<Space>"             " change the leader to be a comma vs slash
 
 fu! SplitScroll()
     :wincmd v
@@ -70,27 +19,6 @@ cmap W! w !sudo tee % >/dev/null
 
 " Toggle the tasklist
 map <leader>td <Plug>TaskList
-
-" Run pep8
-let g:pep8_map='<leader>8'
-
-" run py.test's
-nmap <silent><Leader>tf <Esc>:Pytest file<CR>
-nmap <silent><Leader>tc <Esc>:Pytest class<CR>
-nmap <silent><Leader>tm <Esc>:Pytest method<CR>
-nmap <silent><Leader>tn <Esc>:Pytest next<CR>
-nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
-nmap <silent><Leader>te <Esc>:Pytest error<CR>
-
-" Run django tests
-map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
-
-" Reload Vimrc
-map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
-" open/close the quickfix window
-nmap <leader>c :copen<CR>
-nmap <leader>cc :cclose<CR>
 
 " for when we forget to use sudo to open/edit a file
 cmap w!! w !sudo tee % >/dev/null
@@ -116,9 +44,6 @@ nmap <leader>a <Esc>:Ack!
 
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
-
-" Jump to the definition of whatever the cursor is on
-map <leader>j :RopeGotoDefinition<CR>
 
 " Rename whatever the cursor is on (including references to it)
 map <leader>r :RopeRename<CR>
@@ -178,10 +103,10 @@ set virtualedit=block       " Let cursor move past the last char in <C-v> mode
 set scrolloff=3             " Keep 3 context lines above and below the cursor
 set backspace=2             " Allow backspacing over autoindent, EOL, and BOL
 set showmatch               " Briefly jump to a paren once it's balanced
-set nowrap                  " don't wrap text
+"set nowrap                  " don't wrap text
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
-"set smartindent             " use smart indent if there is no indent file
+set smartindent             " use smart indent if there is no indent file
 set tabstop=4               " <tab> inserts 4 spaces 
 set shiftwidth=4            " but an indent level is 2 spaces wide.
 set softtabstop=4           " <BS> over an autoindent deletes both spaces.
@@ -190,10 +115,6 @@ set shiftround              " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " show matching <> (html mainly) as well
 set foldmethod=indent       " allow us to fold on indents
 set foldlevel=99            " don't fold by default
-
-" don't outdent hashes
-"inoremap # #
-inoremap # X#
 
 " close preview window automatically when we move around
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
@@ -226,7 +147,7 @@ set listchars=tab:>-,eol:$,trail:-,precedes:<,extends:>
 "set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
 set smarttab                " Handle tabs more intelligently 
-set hlsearch                " Highlight searches by default.
+"set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
 """" Display
@@ -247,7 +168,7 @@ map <leader>p "+p
 nnoremap <leader>q :q<CR>
 
 " hide matches on <leader>space
-nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <leader><space> :set hlsearch<cr>
 
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
@@ -258,7 +179,6 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " ==========================================================
 " Javascript
 " ==========================================================
-au BufRead *.js set makeprg=jslint\ %
 
 " Use tab to scroll through autocomplete menus
  autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
@@ -269,54 +189,31 @@ let g:acp_completeoptPreview=1
 " ===========================================================
 " FileType specific changes
 " ============================================================
-" Mako/HTML
-autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
-autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-
-" Python
-"au BufRead *.py compiler nose
-au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-au FileType coffee setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-" Don't let pyflakes use the quickfix window
-let g:pyflakes_use_quickfix = 0
-
-
-
-" Add the virtualenv's site-packages to vim path
-if has('python')
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
-endif
-
-" Load up virtualenv's vimrc if it exists
-if filereadable($VIRTUAL_ENV . '/.vimrc')
-    source $VIRTUAL_ENV/.vimrc
-endif
-
-if exists("&colorcolumn")
-   set colorcolumn=79
-endif
-
 set clipboard=unnamedplus
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set winaltkeys=no
 
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_javascript_checkers = ['jsxhint']
+
+nmap <F8> <Plug>VimchantSpellCheckSwitch
+let g:vimchant_spellcheck_lang = 'fi'
+
+let g:Tex_CompileRule_dvi = 'latexmk -e "$pdflatex=q/pdflatex -synctex=1 -interaction=nonstopmode/" -pdf -interaction=nonstopmode $*'
+
+let g:Tex_IgnoredWarnings =
+\"Underfull\n".
+\"Overfull\n".
+\"specifier changed to\n".
+\"You have requested\n".
+\"Missing number, treated as zero.\n".
+\"There were undefined references\n".
+\"Citation %.%# undefined\n".
+\"Do not use @ in LaTex macro names.\n"
+
+let g:syntastic_quiet_messages = { "level": "warnings", "regex": "Do not use @ in LaTex macro names." }

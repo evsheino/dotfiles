@@ -217,3 +217,4 @@ let g:Tex_IgnoredWarnings =
 \"Do not use @ in LaTex macro names.\n"
 
 let g:syntastic_quiet_messages = { "level": "warnings", "regex": "Do not use @ in LaTex macro names." }
+let g:syntastic_tex_checkers=['lacheck']

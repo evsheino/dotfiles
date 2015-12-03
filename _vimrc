@@ -152,8 +152,6 @@ set wildignore+=*.o,*.obj,.git,*.pyc
 set wildignore+=eggs/**
 set wildignore+=*.egg-info/**
 
-set grepprg=ack         " replace the default grep program with ack
-
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 

@@ -323,3 +323,6 @@ let g:syntastic_python_flake8_args='--ignore=E501,E128,E127'
 let g:syntastic_javascript_checkers = ['jsxhint']
 
 let g:airline#extensions#tabline#enabled = 1
+
+filetype plugin on
+runtime macros/matchit.vim

@@ -322,6 +322,16 @@ let g:syntastic_python_flake8_args='--ignore=E501,E128,E127'
 
 let g:syntastic_javascript_checkers = ['jsxhint']
 
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
+let g:airline_theme="molokai"
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+"let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 runtime macros/matchit.vim
+
+:nnoremap <C-Tab> :bnext<CR>

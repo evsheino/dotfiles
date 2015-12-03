@@ -1,0 +1,16 @@
+[global_config]
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    foreground_color = "#ffffff"
+    use_system_font = False
+    font = DejaVu Sans Mono for Powerline 10

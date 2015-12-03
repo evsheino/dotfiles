@@ -218,3 +218,10 @@ let g:Tex_IgnoredWarnings =
 
 let g:syntastic_quiet_messages = { "level": "warnings", "regex": "Do not use @ in LaTex macro names." }
 let g:syntastic_tex_checkers=['lacheck']
+
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
+let g:airline_theme="molokai"
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif

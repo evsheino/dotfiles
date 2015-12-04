@@ -334,4 +334,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 runtime macros/matchit.vim
 
-:nnoremap <C-Tab> :bnext<CR>
+nnoremap <C-Tab> :bnext<CR>
+
+map <C-k> :BD<cr>
+
+let g:ag_working_path_mode="r"

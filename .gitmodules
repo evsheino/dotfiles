@@ -85,3 +85,6 @@
 [submodule "_vim/bundle/ag.vim"]
 	path = _vim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim.git
+[submodule "_vim/bundle/vim-buffkill"]
+	path = _vim/bundle/vim-buffkill
+	url = https://github.com/qpkorr/vim-bufkill.git

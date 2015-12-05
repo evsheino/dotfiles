@@ -1,16 +1,14 @@
+My dotfiles. Based on https://github.com/sontek/dotfiles/tree/vim .
+
 ## Files
-.vim
-    directory of file type configurations and plugins
-.vimrc
+_vim
+    my vim dir
+_vimrc
     my vim configuration
-.screenrc
-    my screen configuration
-.weechat
-    my configuration for weechat, a great irc client
-.gimp
-    my tweaks/additions to gimp (fonts, brushes, etc)
 
 ## Instructions
+Install script by sontek.
+
 ### Creating source files
 Any file which matches the shell glob `_*` will be linked into `$HOME` as a symlink with the first `_`  replaced with a `.`
 
@@ -50,3 +48,5 @@ Note that if there was not an original version, the installed links will not be 
   * pep8
   * pyflakes
   * rope
+* ag (https://github.com/ggreer/the_silver_searcher)
+* powerline fonts (https://github.com/powerline/fonts)

@@ -88,3 +88,6 @@
 [submodule "_vim/bundle/vim-buffkill"]
 	path = _vim/bundle/vim-buffkill
 	url = https://github.com/qpkorr/vim-bufkill.git
+[submodule "_vim/bundle/trailertrash"]
+	path = _vim/bundle/trailertrash
+	url = https://github.com/csexton/trailertrash.vim.git

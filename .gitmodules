@@ -91,3 +91,15 @@
 [submodule "_vim/bundle/trailertrash"]
 	path = _vim/bundle/trailertrash
 	url = https://github.com/csexton/trailertrash.vim.git
+[submodule "_vim/bundle/tsuquyomi"]
+	path = _vim/bundle/tsuquyomi
+	url = https://github.com/Quramy/tsuquyomi.git
+[submodule "_vim/bundle/vimproc"]
+	path = _vim/bundle/vimproc
+	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "_vim/bundle/typescript-vim"]
+	path = _vim/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "_vim/bundle/vim-json"]
+	path = _vim/bundle/vim-json
+	url = https://github.com/elzr/vim-json.git

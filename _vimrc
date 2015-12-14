@@ -320,7 +320,9 @@ let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E128,E127'
 
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_json_checkers = ['jsonlint']
+au BufRead,BufNewFile *.json set filetype=json
 
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 let g:airline_theme="molokai"
@@ -337,5 +339,4 @@ runtime macros/matchit.vim
 nnoremap <C-Tab> :bnext<CR>
 
 map <C-k> :BD<cr>
-
 let g:ag_working_path_mode="r"

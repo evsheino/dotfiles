@@ -1,51 +1,3 @@
-" https://github.com/sontek/dotfiles/
-" ==========================================================
-" Dependencies - Libraries/Applications outside of vim
-" ==========================================================
-" Pep8 - http://pypi.python.org/pypi/pep8
-" Pyflakes
-" Ack
-" nose, django-nose
-
-" ==========================================================
-" Plugins included
-" ==========================================================
-" Pathogen
-"     Better Management of VIM plugins
-"
-" GunDo
-"     Visual Undo in vim with diff's to check the differences
-"
-" Pytest
-"     Runs your Python tests in Vim.
-"
-" Commant-T
-"     Allows easy search and opening of files within a given path
-"
-" Snipmate
-"     Configurable snippets to avoid re-typing common comands
-"
-" PyFlakes
-"     Underlines and displays errors with Python on-the-fly
-"
-" Fugitive
-"    Interface with git from vim
-"
-" Git
-"    Syntax highlighting for git config files
-"
-" Pydoc
-"    Opens up pydoc within vim
-"
-" Surround
-"    Allows you to surround text with open/close tags
-"
-" Py.test
-"    Run py.test test's from within vim
-"
-" MakeGreen
-"    Generic test runner that works with nose
-"
 " ==========================================================
 " Shortcuts
 " ==========================================================
@@ -111,8 +63,8 @@ map <leader>n :NERDTreeToggle<CR>
 map <leader>f :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 
-" Ack searching
-nmap <leader>a <Esc>:Ack!
+" Ag searching
+nmap <leader>a <Esc>:Ag!
 
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
@@ -207,8 +159,7 @@ set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
 
 """" Messages, Info, Status
 set ls=2                    " allways show status line
-set vb t_vb=                " Disable all bells.  I hate ringing/flashing.
-set confirm                 " Y-N-C prompt if closing with unsaved changes.
+"set confirm                 " Y-N-C prompt if closing with unsaved changes.
 set showcmd                 " Show incomplete normal mode commands as I type.
 set report=0                " : commands always print changed line count.
 set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
@@ -256,11 +207,11 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " ==========================================================
 " Javascript
 " ==========================================================
-au BufRead *.js set makeprg=jslint\ %
+"au BufRead *.js set makeprg=jslint\ %
 
 " Use tab to scroll through autocomplete menus
- autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
- autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
+autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
+autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
 
 let g:acp_completeoptPreview=1
 
@@ -268,7 +219,7 @@ let g:acp_completeoptPreview=1
 " FileType specific changes
 " ============================================================
 " Mako/HTML
-autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
+"autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
 autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Python
@@ -311,6 +262,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_aggregate_errors = 1
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -321,8 +273,11 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E128,E127'
 
 let g:syntastic_javascript_checkers = ['eslint']
+
 let g:syntastic_json_checkers = ['jsonlint']
 au BufRead,BufNewFile *.json set filetype=json
+
+let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 let g:airline_theme="molokai"
@@ -337,6 +292,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 runtime macros/matchit.vim
 
 nnoremap <C-Tab> :bnext<CR>
-
+nnoremap <C-S-Tab> :bprevious<CR>
+" Kill buffer with ctrl-k
 map <C-k> :BD<cr>
+
 let g:ag_working_path_mode="r"

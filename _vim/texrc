@@ -204,7 +204,7 @@ let g:syntastic_check_on_wq = 0
 nmap <F8> <Plug>VimchantSpellCheckSwitch
 let g:vimchant_spellcheck_lang = 'fi'
 
-let g:Tex_CompileRule_dvi = 'latexmk -e "$pdflatex=q/pdflatex -synctex=1 -interaction=nonstopmode/" -pdf -interaction=nonstopmode $*'
+let g:Tex_CompileRule_dvi = 'latexmk -shell-escape -e "$pdflatex=q/pdflatex -synctex=1 -interaction=nonstopmode/" -pdf -interaction=nonstopmode $*'
 
 let g:Tex_IgnoredWarnings =
 \"Underfull\n".

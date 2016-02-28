@@ -297,3 +297,5 @@ nnoremap <C-S-Tab> :bprevious<CR>
 map <C-k> :BD<cr>
 
 let g:ag_working_path_mode="r"
+
+let NERDTreeIgnore = ['\.pyc$']

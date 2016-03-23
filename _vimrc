@@ -299,3 +299,5 @@ map <C-k> :BD<cr>
 let g:ag_working_path_mode="r"
 
 let NERDTreeIgnore = ['\.pyc$']
+
+set hidden

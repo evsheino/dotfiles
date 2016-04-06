@@ -112,3 +112,9 @@
 [submodule "_vim/bundle/delimitMate"]
 	path = _vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule "_vim/bundle/nerdcommenter"]
+	path = _vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "_vim/bundle/MatchTagAlways"]
+	path = _vim/bundle/MatchTagAlways
+	url = https://github.com/Valloric/MatchTagAlways.git

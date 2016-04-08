@@ -109,3 +109,6 @@
 [submodule "_vim/bundle/MatchTagAlways"]
 	path = _vim/bundle/MatchTagAlways
 	url = https://github.com/Valloric/MatchTagAlways.git
+[submodule "_vim/bundle/vim-action-ag"]
+	path = _vim/bundle/vim-action-ag
+	url = https://github.com/Chun-Yang/vim-action-ag.git

@@ -1,20 +1,10 @@
 My dotfiles. Based on https://github.com/sontek/dotfiles/tree/vim .
 
-## Installation
-
-    $ git clone https://github.com/evsheino/dotfiles.git
-    $ git submodule update --init
-
-## Files
-_vim
-    my vim dir
-_vimrc
-    my vim configuration
-
 ## Instructions
 Install script by sontek.
 
 ### Creating source files
+
 Any file which matches the shell glob `_*` will be linked into `$HOME` as a symlink with the first `_`  replaced with a `.`
 
 For example:
@@ -26,13 +16,14 @@ becomes
     ${HOME}/.bashrc
 
 ### Installing source files
+
 It's as simple as running:
 
     ./install.sh
 
 From this top-level directory.
 
-### Only install and build vim Files
+### Only install and build vim files
 Because this bit is pretty portable
 
     ./install.sh vim
@@ -43,6 +34,10 @@ To replace installed files with the originals:
     ./install.sh restore
 
 Note that if there was not an original version, the installed links will not be removed.
+
+### Updating the vim packages
+
+See http://stackoverflow.com/questions/1030169/easy-way-pull-latest-of-all-submodules
 
 ## Requirements
 ### Shell

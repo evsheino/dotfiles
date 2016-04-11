@@ -45,8 +45,7 @@ See http://stackoverflow.com/questions/1030169/easy-way-pull-latest-of-all-submo
 
 ### Vim
 * python
-  * pep8
-  * pyflakes
+  * flake8
   * rope
 * ag (https://github.com/ggreer/the_silver_searcher)
 * powerline fonts (https://github.com/powerline/fonts)

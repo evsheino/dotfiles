@@ -42,7 +42,6 @@ map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimr
 
 " open/close the quickfix window
 nmap <leader>c :copen<CR>
-nmap <leader>cc :cclose<CR>
 
 " for when we forget to use sudo to open/edit a file
 cmap w!! w !sudo tee % >/dev/null
@@ -60,7 +59,6 @@ imap <C-W> <C-O><C-W>
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
 
-map <leader>f :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 
 " Ag searching
@@ -132,7 +130,7 @@ set nowrap                  " don't wrap text
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
 "set smartindent             " use smart indent if there is no indent file
-set tabstop=4               " <tab> inserts 4 spaces 
+set tabstop=4               " <tab> inserts 4 spaces
 set shiftwidth=4            " but an indent level is 2 spaces wide.
 set softtabstop=4           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
@@ -174,7 +172,7 @@ set listchars=tab:>-,eol:$,trail:-,precedes:<,extends:>
 """ Searching and Patterns
 "set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
-set smarttab                " Handle tabs more intelligently 
+set smarttab                " Handle tabs more intelligently
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
@@ -189,17 +187,11 @@ endif
 
 colorscheme molokai
 
-" Paste from clipboard
-map <leader>p "+p
-
-" Quit window on <leader>q
-nnoremap <leader>q :q<CR>
-
 " hide matches on <leader>space
 nnoremap <leader><space> :nohlsearch<cr>
 
 " Remove trailing whitespace on <leader>S
-nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <leader>S :TrailerTrim<CR>
 
 " Select the item in the list with enter
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -230,8 +222,6 @@ au FileType coffee setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smart
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
-
-
 
 " Add the virtualenv's site-packages to vim path
 if has('python')
@@ -293,8 +283,8 @@ runtime macros/matchit.vim
 
 nnoremap <C-Tab> :bnext<CR>
 nnoremap <C-S-Tab> :bprevious<CR>
-" Kill buffer with ctrl-k
-map <C-k> :BD<cr>
+" Kill buffer with ctrl-q
+map <C-q> :BD<cr>
 
 let g:ag_working_path_mode="r"
 

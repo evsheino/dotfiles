@@ -1,5 +1,10 @@
 My dotfiles. Based on https://github.com/sontek/dotfiles/tree/vim .
 
+## Installation
+
+    $ git clone https://github.com/evsheino/dotfiles.git
+    $ git submodule update --init
+
 ## Files
 _vim
     my vim dir

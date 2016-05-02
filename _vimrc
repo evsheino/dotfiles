@@ -57,7 +57,7 @@ map <c-h> <c-w>h
 imap <C-W> <C-O><C-W>
 
 " Open NerdTree
-map <leader>n :NERDTreeToggle<CR>
+map <F2> :NERDTreeToggle<CR>
 
 map <leader>b :CtrlPBuffer<CR>
 
@@ -65,13 +65,13 @@ map <leader>b :CtrlPBuffer<CR>
 nmap <leader>a <Esc>:AgFromSearch!<CR>
 
 " Load the Gundo window
-map <leader>g :GundoToggle<CR>
+map <F3> :GundoToggle<CR>
 
 " Jump to the definition of whatever the cursor is on
-map <leader>j :RopeGotoDefinition<CR>
+"map <leader>j :RopeGotoDefinition<CR>
 
 " Rename whatever the cursor is on (including references to it)
-map <leader>r :RopeRename<CR>
+"map <leader>r :RopeRename<CR>
 " ==========================================================
 " Pathogen - Allows us to organize our vim plugins
 " ==========================================================

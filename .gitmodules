@@ -109,3 +109,6 @@
 [submodule "_vim/bundle/vim-action-ag"]
 	path = _vim/bundle/vim-action-ag
 	url = https://github.com/Chun-Yang/vim-action-ag.git
+[submodule "_vim/bundle/tagbar"]
+	path = _vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git

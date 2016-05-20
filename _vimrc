@@ -285,6 +285,7 @@ nnoremap <C-Tab> :bnext<CR>
 nnoremap <C-S-Tab> :bprevious<CR>
 " Kill buffer with ctrl-q
 map <C-q> :BD<cr>
+nmap <F4> :TagbarToggle<CR>
 
 let g:ag_working_path_mode="r"
 

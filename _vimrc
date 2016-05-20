@@ -291,3 +291,4 @@ let g:ag_working_path_mode="r"
 let NERDTreeIgnore = ['\.pyc$']
 
 set hidden
+set updatetime=250

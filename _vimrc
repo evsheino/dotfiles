@@ -293,3 +293,5 @@ let NERDTreeIgnore = ['\.pyc$']
 
 set hidden
 set updatetime=250
+
+au FileType html,xhtml,xml,htmldjango let b:delimitMate_autoclose = 0 

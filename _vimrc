@@ -292,3 +292,5 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0

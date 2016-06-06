@@ -46,16 +46,6 @@ nmap <leader>c :copen<CR>
 " for when we forget to use sudo to open/edit a file
 cmap w!! w !sudo tee % >/dev/null
 
-" ctrl-jklm  changes to that split
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-
-" and lets make these all work in insert mode too ( <C-O> makes next cmd
-"  happen as if in command mode )
-imap <C-W> <C-O><C-W>
-
 " Open NerdTree
 map <F2> :NERDTreeToggle<CR>
 
@@ -295,3 +285,10 @@ set hidden
 set updatetime=250
 
 au FileType html,xhtml,xml,htmldjango let b:delimitMate_autoclose = 0 
+
+" ctrl-jklm  changes to that split
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+

@@ -112,3 +112,6 @@
 [submodule "_vim/bundle/tagbar"]
 	path = _vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "_vim/bundle/yajs.vim"]
+	path = _vim/bundle/yajs.vim
+	url = https://github.com/othree/yajs.vim.git

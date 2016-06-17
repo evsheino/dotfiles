@@ -173,6 +173,10 @@ if has("gui_running")
 
     " Remove toolbar
     set guioptions-=T
+
+    " Remove scrollbars
+    set guioptions-=r
+    set guioptions-=L
 endif
 
 colorscheme molokai
@@ -265,14 +269,13 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-"let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 runtime macros/matchit.vim
 
-nnoremap <C-Tab> :bnext<CR>
-nnoremap <C-S-Tab> :bprevious<CR>
+nnoremap L :bnext<CR>
+nnoremap H :bprevious<CR>
 " Kill buffer with ctrl-q
 map <C-q> :BD<cr>
 nmap <F4> :TagbarToggle<CR>
@@ -284,13 +287,13 @@ let NERDTreeIgnore = ['\.pyc$']
 set hidden
 set updatetime=250
 
-au FileType html,xhtml,xml,htmldjango let b:delimitMate_autoclose = 0 
+au FileType html,xhtml,xml,htmldjango let b:delimitMate_autoclose = 0
 
 " ctrl-jklm  changes to that split
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <C-h> <C-w>h
 
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0

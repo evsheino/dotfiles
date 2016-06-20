@@ -195,6 +195,7 @@ nmap <F8> <Plug>VimchantSpellCheckSwitch
 let g:vimchant_spellcheck_lang = 'fi'
 
 let g:Tex_CompileRule_dvi = 'latexmk -shell-escape -e "$pdflatex=q/pdflatex -synctex=1 -interaction=nonstopmode/" -pdf -interaction=nonstopmode $*'
+let g:Tex_ViewRule_pdf = 'zathura'
 
 let g:Tex_IgnoredWarnings =
 \"Underfull\n".
@@ -204,7 +205,9 @@ let g:Tex_IgnoredWarnings =
 \"Missing number, treated as zero.\n".
 \"There were undefined references\n".
 \"Citation %.%# undefined\n".
-\"Do not use @ in LaTex macro names.\n"
+\"Do not use @ in LaTex macro names.\n".
+\"Marginpar on page %s moved\n"
+let g:Tex_IgnoreLevel = 9
 
 let g:syntastic_quiet_messages = { "level": "warnings", "regex": "Do not use @ in LaTex macro names." }
 let g:syntastic_tex_checkers=['lacheck']
@@ -215,5 +218,16 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 let g:Tex_SectionMaps = 0
+
+" Kill buffer with ctrl-q
+map <C-q> :BD<cr>
+
+function! Synctex()
+    " remove 'silent' for debugging
+    execute "!zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
+endfunction
+map <C-enter> :call Synctex()<cr>

@@ -147,6 +147,10 @@ if has("gui_running")
 
     " Remove toolbar
     set guioptions-=T
+
+    " Remove scrollbars
+    set guioptions-=r
+    set guioptions-=L
 endif
 
 colorscheme molokai

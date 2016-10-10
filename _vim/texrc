@@ -231,3 +231,6 @@ function! Synctex()
     execute "!zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . g:syncpdf
 endfunction
 map <C-enter> :call Synctex()<cr>
+
+nnoremap L :bnext<CR>
+nnoremap H :bprevious<CR>

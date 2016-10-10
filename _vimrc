@@ -287,7 +287,8 @@ let NERDTreeIgnore = ['\.pyc$']
 set hidden
 set updatetime=250
 
-au FileType html,xhtml,xml,htmldjango let b:delimitMate_autoclose = 0
+let loaded_delimitMate = 1
+"au FileType html,xhtml,xml,htmldjango let b:delimitMate_autoclose = 0
 
 " ctrl-jklm  changes to that split
 nmap <C-j> <C-w>j

@@ -296,5 +296,7 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
 
+nmap <leader>e :Errors<CR>
+
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0

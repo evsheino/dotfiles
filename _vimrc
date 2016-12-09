@@ -54,6 +54,10 @@ map <leader>b :CtrlPBuffer<CR>
 " Ag searching
 nmap <leader>a <Esc>:AgFromSearch!<CR>
 
+" CtrlSF
+vmap <leader>f <Plug>CtrlSFVwordExec
+nmap <leader>f <Plug>CtrlSFCCwordExec
+
 " Load the Gundo window
 map <F3> :GundoToggle<CR>
 

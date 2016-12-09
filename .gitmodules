@@ -115,3 +115,9 @@
 [submodule "_vim/bundle/vim-javascript"]
 	path = _vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "_vim/bundle/ctrlsf.vim"]
+	path = _vim/bundle/ctrlsf.vim
+	url = https://github.com/dyng/ctrlsf.vim.git
+[submodule "_vim/bundle/vim-multiple-cursors"]
+	path = _vim/bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git

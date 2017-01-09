@@ -210,7 +210,7 @@ let g:Tex_IgnoredWarnings =
 \"There were undefined references\n".
 \"Citation %.%# undefined\n".
 \"Do not use @ in LaTex macro names.\n".
-\"Marginpar on page %s moved\n"
+\"Marginpar on page %s moved"
 let g:Tex_IgnoreLevel = 9
 
 let g:syntastic_quiet_messages = { "level": "warnings", "regex": "Do not use @ in LaTex macro names." }
@@ -238,3 +238,5 @@ map <C-enter> :call Synctex()<cr>
 
 nnoremap L :bnext<CR>
 nnoremap H :bprevious<CR>
+
+set hidden

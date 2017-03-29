@@ -58,10 +58,14 @@ nmap <leader>a <Esc>:AgFromSearch!<CR>
 vmap <leader>f <Plug>CtrlSFVwordExec
 nmap <leader>f <Plug>CtrlSFCCwordExec
 nmap <C-a> <Plug>CtrlSFPrompt
-
 " Load the Gundo window
 map <F3> :GundoToggle<CR>
 
+" Disable gitgutter for ttl files
+autocmd BufNewFile,BufRead *.ttl :GitGutterDisable
+" Disable autocompletition for ttl files
+autocmd BufNewFile,BufRead *.ttl :AcpDisable
+"call add(g:pathogen_blacklist, 'gundo')
 " Jump to the definition of whatever the cursor is on
 "map <leader>j :RopeGotoDefinition<CR>
 
@@ -72,7 +76,7 @@ map <F3> :GundoToggle<CR>
 " ==========================================================
 " Load pathogen with docs for all plugins
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 
 " ==========================================================

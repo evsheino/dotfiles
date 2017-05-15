@@ -118,3 +118,6 @@
 [submodule "_vim/bundle/vim-multiple-cursors"]
 	path = _vim/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "_vim/bundle/vim-jsx-pretty"]
+	path = _vim/bundle/vim-jsx-pretty
+	url = https://github.com/MaxMEllon/vim-jsx-pretty.git

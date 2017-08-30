@@ -121,3 +121,6 @@
 [submodule "_vim/bundle/vim-jsx-pretty"]
 	path = _vim/bundle/vim-jsx-pretty
 	url = https://github.com/MaxMEllon/vim-jsx-pretty.git
+[submodule "_vim/bundle/vim-localvimrc"]
+	path = _vim/bundle/vim-localvimrc
+	url = git@github.com:embear/vim-localvimrc.git

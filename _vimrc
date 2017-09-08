@@ -189,6 +189,7 @@ if has("gui_running")
 endif
 
 colorscheme molokai
+highlight PmenuSel ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
 
 " hide matches on <leader>space
 nnoremap <leader><space> :nohlsearch<cr>
@@ -324,7 +325,7 @@ nmap <C-h> <C-w>h
 
 nmap <leader>e :Errors<CR>
 
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
+"let g:gitgutter_realtime = 0
+"let g:gitgutter_eager = 0
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']

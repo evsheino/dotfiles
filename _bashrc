@@ -115,7 +115,6 @@ fi
 
 setxkbmap -option ctrl:nocaps
 
-alias gvim="gvim 2>/dev/null"
 alias vimtex="gvim -u ~/.vim/texrc"
 
 export TERM=xterm-256color

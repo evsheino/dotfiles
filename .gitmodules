@@ -127,3 +127,6 @@
 [submodule "_vim/bundle/tern_for_vim"]
 	path = _vim/bundle/tern_for_vim
 	url = git@github.com:ternjs/tern_for_vim.git
+[submodule "_vim/bundle/vim-import-js"]
+	path = _vim/bundle/vim-import-js
+	url = git@github.com:Galooshi/vim-import-js.git

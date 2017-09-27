@@ -329,3 +329,10 @@ nmap <leader>e :Errors<CR>
 "let g:gitgutter_eager = 0
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+"Tern
+let g:tern_map_prefix=","
+"enable keyboard shortcuts
+let g:tern_map_keys=1
+"show argument hints
+let g:tern_show_argument_hints='on_hold'

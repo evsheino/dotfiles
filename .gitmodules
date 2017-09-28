@@ -130,3 +130,6 @@
 [submodule "_vim/bundle/vim-import-js"]
 	path = _vim/bundle/vim-import-js
 	url = git@github.com:Galooshi/vim-import-js.git
+[submodule "_vim/bundle/vim-rdf"]
+	path = _vim/bundle/vim-rdf
+	url = git@github.com:niklasl/vim-rdf.git

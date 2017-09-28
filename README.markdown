@@ -53,3 +53,5 @@ See http://stackoverflow.com/questions/1030169/easy-way-pull-latest-of-all-submo
   * Node.js, npm
   * [ImportJS](https://github.com/Galooshi/import-js) (`npm install -g import-js`)
   * [Tern.js](http://ternjs.net/) (`cd _vim/bundle/tern_for_vim/ && npm install`)
+* RDF
+  * [Raptor](http://librdf.org/raptor/INSTALL.html) (for syntax)

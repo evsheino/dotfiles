@@ -49,3 +49,7 @@ See http://stackoverflow.com/questions/1030169/easy-way-pull-latest-of-all-submo
   * rope
 * ag (https://github.com/ggreer/the_silver_searcher)
 * powerline fonts (https://github.com/powerline/fonts)
+* JavaScript
+  * Node.js, npm
+  * [ImportJS](https://github.com/Galooshi/import-js) (`npm install -g import-js`)
+  * [Tern.js](http://ternjs.net/) (`cd _vim/bundle/tern_for_vim/ && npm install`)

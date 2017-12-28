@@ -4,22 +4,6 @@
 set nocompatible              " Don't be compatible with vi
 let mapleader=","             " change the leader to be a comma vs slash
 
-fu! SplitScroll()
-    :wincmd v
-    :wincmd w
-    execute "normal! \<C-d>"
-    :set scrollbind
-    :wincmd w
-    :set scrollbind
-endfu
-
-nmap <leader>sb :call SplitScroll()<CR>
-
-"<CR><C-w>l<C-f>:set scrollbind<CR>
-
-" sudo write this
-cmap W! w !sudo tee % >/dev/null
-
 " Toggle the tasklist
 map <leader>td <Plug>TaskList
 
@@ -66,11 +50,7 @@ autocmd BufNewFile,BufRead *.ttl :GitGutterDisable
 " Disable autocompletition for ttl files
 autocmd BufNewFile,BufRead *.ttl :AcpDisable
 "call add(g:pathogen_blacklist, 'gundo')
-" Jump to the definition of whatever the cursor is on
-"map <leader>j :RopeGotoDefinition<CR>
 
-" Rename whatever the cursor is on (including references to it)
-"map <leader>r :RopeRename<CR>
 " ==========================================================
 " Pathogen - Allows us to organize our vim plugins
 " ==========================================================
@@ -118,7 +98,7 @@ set pumheight=6             " Keep a small completion window
 
 
 """ Moving Around/Editing
-"set cursorline              " have a line indicate the cursor location
+set cursorline              " have a line indicate the cursor location
 set ruler                   " show the cursor position all the time
 set nostartofline           " Avoid moving cursor to BOL when jumping around
 set virtualedit=block       " Let cursor move past the last char in <C-v> mode
@@ -200,11 +180,6 @@ nnoremap <leader>S :TrailerTrim<CR>
 " Select the item in the list with enter
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" ==========================================================
-" Javascript
-" ==========================================================
-"au BufRead *.js set makeprg=jslint\ %
-
 " Use tab to scroll through autocomplete menus
 autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
 autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
@@ -214,37 +189,14 @@ let g:acp_completeoptPreview=1
 " ===========================================================
 " FileType specific changes
 " ============================================================
-" Mako/HTML
-"autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
 autocmd FileType html,xhtml,xml,css,htmldjango setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Python
-"au BufRead *.py compiler nose
-au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au FileType coffee setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
-
-" Add the virtualenv's site-packages to vim path
-if has('python')
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
-endif
-
-" Load up virtualenv's vimrc if it exists
-if filereadable($VIRTUAL_ENV . '/.vimrc')
-    source $VIRTUAL_ENV/.vimrc
-endif
 
 if exists("&colorcolumn")
    set colorcolumn=79
@@ -315,9 +267,6 @@ let NERDTreeIgnore = ['\.pyc$']
 
 set hidden
 set updatetime=250
-
-let loaded_delimitMate = 1
-"au FileType html,xhtml,xml,htmldjango let b:delimitMate_autoclose = 0
 
 " ctrl-jklm  changes to that split
 nmap <C-j> <C-w>j

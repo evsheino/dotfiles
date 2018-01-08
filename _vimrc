@@ -4,20 +4,6 @@
 set nocompatible              " Don't be compatible with vi
 let mapleader=","             " change the leader to be a comma vs slash
 
-" Toggle the tasklist
-map <leader>td <Plug>TaskList
-
-" Run pep8
-let g:pep8_map='<leader>8'
-
-" run py.test's
-nmap <silent><Leader>tf <Esc>:Pytest file<CR>
-nmap <silent><Leader>tc <Esc>:Pytest class<CR>
-nmap <silent><Leader>tm <Esc>:Pytest method<CR>
-nmap <silent><Leader>tn <Esc>:Pytest next<CR>
-nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
-nmap <silent><Leader>te <Esc>:Pytest error<CR>
-
 " Run django tests
 map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
 
@@ -286,7 +272,7 @@ let g:tern_map_prefix=","
 "enable keyboard shortcuts
 let g:tern_map_keys=1
 "show argument hints
-let g:tern_show_argument_hints='on_hold'
+"let g:tern_show_argument_hints='on_hold'
 
 if has('python3')
     let g:gundo_prefer_python3 = 1

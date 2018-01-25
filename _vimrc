@@ -163,13 +163,6 @@ nnoremap <leader><space> :nohlsearch<cr>
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :TrailerTrim<CR>
 
-" Select the item in the list with enter
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Use tab to scroll through autocomplete menus
-autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
-autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
-
 let g:acp_completeoptPreview=1
 
 " ===========================================================
@@ -243,8 +236,8 @@ runtime macros/matchit.vim
 
 nnoremap L :bnext<CR>
 nnoremap H :bprevious<CR>
-" Kill buffer with ctrl-q
-map <C-q> :BD<cr>
+" Kill buffer with ctrl-b
+nmap <C-b> :BD<cr>
 nmap <F4> :TagbarToggle<CR>
 
 let g:ag_working_path_mode="r"

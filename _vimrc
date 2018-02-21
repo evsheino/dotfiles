@@ -270,3 +270,11 @@ let g:tern_map_keys=1
 if has('python3')
     let g:gundo_prefer_python3 = 1
 endif
+
+" workaround for https://github.com/vim/vim/issues/1671
+if has("unix")
+  let s:uname = system("echo -n \"$(uname)\"")
+  if !v:shell_error && s:uname == "Linux"
+    set t_BE=
+  endif
+endif

@@ -136,3 +136,6 @@
 [submodule "_vim/bundle/YouCompleteMe"]
 	path = _vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "_vim/bundle/editorconfig-vim"]
+	path = _vim/bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git

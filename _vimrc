@@ -178,7 +178,7 @@ au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\
 let g:pyflakes_use_quickfix = 0
 
 if exists("&colorcolumn")
-   set colorcolumn=79
+   set colorcolumn=120
 endif
 
 set clipboard=unnamedplus

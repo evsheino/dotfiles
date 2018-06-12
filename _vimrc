@@ -184,44 +184,9 @@ endif
 set clipboard=unnamedplus
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-function! SyntasticESlintChecker()
-  let l:npm_bin = ''
-  let l:eslint = 'eslint'
-
-  if executable('npm')
-      let l:npm_bin = split(system('npm bin'), '\n')[0]
-  endif
-
-  if strlen(l:npm_bin) && executable(l:npm_bin . '/eslint')
-    let l:eslint = l:npm_bin . '/eslint'
-  endif
-
-  let b:syntastic_javascript_eslint_exec = l:eslint
-endfunction
-
-let g:syntastic_turtle_checkers = ["rapper"]
-
-let g:syntastic_javascript_checkers = ["eslint"]
-
-autocmd FileType javascript :call SyntasticESlintChecker()
-
-let g:syntastic_aggregate_errors = 1
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501,E128,E127'
-
-let g:syntastic_json_checkers = ['jsonlint']
 au BufRead,BufNewFile *.json set filetype=json
-
-let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 let g:airline_theme="molokai"
@@ -278,3 +243,13 @@ if has("unix")
     set t_BE=
   endif
 endif
+
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_echo_msg_format = '[%linter%] %code:% %s'
+let g:ale_python_pylint_change_directory = 0
+let g:ale_linters_explicit = 1

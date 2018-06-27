@@ -246,6 +246,7 @@ endif
 
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
+\   'python': ['yapf'],
 \}
 let g:ale_linters = {
 \   'javascript': ['eslint'],

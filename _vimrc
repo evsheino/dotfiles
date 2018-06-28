@@ -207,7 +207,7 @@ nmap <F4> :TagbarToggle<CR>
 
 let g:ag_working_path_mode="r"
 
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 set hidden
 set updatetime=250

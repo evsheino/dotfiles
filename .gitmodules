@@ -145,3 +145,6 @@
 [submodule "_vim/bundle/ale"]
 	path = _vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "_vim/bundle/vim-prettier"]
+	path = _vim/bundle/vim-prettier
+	url = https://github.com/prettier/vim-prettier.git

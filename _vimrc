@@ -28,6 +28,11 @@ nmap <leader>a <Esc>:AgFromSearch!<CR>
 vmap <leader>f <Plug>CtrlSFVwordExec
 nmap <leader>f <Plug>CtrlSFCCwordExec
 nmap <C-a> <Plug>CtrlSFPrompt
+let g:ctrlsf_auto_focus = {
+    \ "at": "done",
+    \ "duration_less_than": 1000
+    \ }
+
 " Load the Gundo window
 map <F3> :GundoToggle<CR>
 

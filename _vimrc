@@ -114,7 +114,7 @@ set foldlevel=99            " don't fold by default
 inoremap # X#
 
 " close preview window automatically when we move around
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 """" Reading/Writing
@@ -168,7 +168,7 @@ nnoremap <leader><space> :nohlsearch<cr>
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :TrailerTrim<CR>
 
-let g:acp_completeoptPreview=1
+"let g:acp_completeoptPreview=1
 
 " ===========================================================
 " FileType specific changes
@@ -259,3 +259,5 @@ let g:ale_linters = {
 let g:ale_echo_msg_format = '[%linter%] %code:% %s'
 let g:ale_python_pylint_change_directory = 0
 let g:ale_linters_explicit = 1
+
+hi SpellBad ctermfg=15 ctermbg=1
